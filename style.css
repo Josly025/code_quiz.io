@@ -1,0 +1,24 @@
+header {
+  position: relative;
+  column-count: 2;
+  color: midnightblue;
+  font-weight: 700;
+}
+
+.container {
+  border: 4px;
+  border-color: lightcoral;
+  /* background-color: lightblue; */
+  margin: 150px;
+  width: 750px;
+  text-align: center;
+}
+
+#button {
+  border-radius: 50px;
+  margin-left: 685px;
+  margin-top: 25px;
+  transform: scale(2);
+  background: none;
+  font-size: 18px;
+}
