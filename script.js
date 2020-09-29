@@ -39,38 +39,29 @@ var questionList = [
     ],
   },
 ];
-// console.log(questionList);
 
-questionlist.forEach(function (question) {
-  var newQuestion = createNewElement("div");
-  newQuestion.textContent = question;
-  questionDiv.appendChild(newQuestion);
-});
-
-for (var i = 0; i < newList.length; i++) {
+for (var i = 0; i < questionList.length; i++) {
   var newTag = document.createElement("p");
-  newTag.textContent = newQuestions[i];
+  newTag.textContent = questionList[i];
   questionDiv.appendChild(newTag);
-
-  //   console.log(newTag);
 }
 
 ////////////////////Countdown Timer////////////////////////////
-buttonClick.addEventListener("click", clockDown);
-// var secTime = 1000 * 60;
-var startTime = 1000 * 60;
-
-function clockDown() {
+buttonClick.addEventListener("click", function () {
+  startTime = 80;
   setInterval(function () {
+    startTime--;
     if (startTime >= 0) {
-      startTime = startTime--;
+      countDown.textContent = "Time: " + startTime + " seconds";
     }
-
-    if (startTime <= 0) {
-      clearInterval((startTime = 60.0));
+    if (startTime === 0) {
+      clearInterval((startTime = 80));
       confirm("Times UP!"); //this is where you log the score
     }
-    countDown.innerHTML = "Time: " + startTime + " seconds";
-    startTime--;
-  });
-}
+  }, 1000);
+}); //sru n every second (1000=1sec)
+/////////////////////////Storing Run /////////////////////////////////////
+
+var storeScore = prompt("Please enter initals and current time!");
+
+localStorage.setItem("storeScore", JSON.stringify([storescore]));

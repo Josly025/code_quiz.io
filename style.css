@@ -22,3 +22,8 @@ header {
   background: none;
   font-size: 18px;
 }
+
+.clearfix {
+  position: relative;
+  margin: 100px 365px;
+}
