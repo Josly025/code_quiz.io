@@ -4,45 +4,50 @@ var buttonClick = document.querySelector(".start");
 //List of questions (4 by 3)
 var questionList = [
   {
-    question: "What is the capital of Arizona?",
+    question: "1) What is the capital of Arizona?",
     answers: [
       { text: "Phoenix", correct: true },
       { text: "Minneapolis", correct: false },
       { text: "Denver", correct: false },
+      { text: "Sedona", correct: false },
     ],
   },
 
   {
-    question: "What is the capital of Idaho?",
+    question: "2) What is the capital of Idaho?",
     answers: [
       { text: "Frankfort", correct: false },
       { text: "Boise", correct: true },
       { text: "Mt. Mood", correct: false },
+      { text: "Jackson", correct: false },
     ],
   },
   {
-    question: "What is the capital of Iowa?",
+    question: "3) What is the capital of Iowa?",
     answers: [
       { text: "Davenport", correct: false },
       { text: "Des Moines", correct: true },
       { text: "Iowa City", correct: false },
+      { text: "Madison", correct: false },
     ],
   },
   {
-    question: "What is the capital of Texas?",
+    question: "4) What is the capital of Texas?",
     answers: [
       { text: "Dallas", correct: false },
       { text: "Austin", correct: true },
       { text: "Houston", correct: false },
+      { text: "San Andreas", correct: false },
     ],
   },
 
   {
-    question: "What is the capital of New York",
+    question: "5) What is the capital of New York",
     answers: [
       { text: "New York City", correct: false },
       { text: "Rochester", correct: false },
       { text: "Albany", correct: true },
+      { text: "Boston", correct: true },
     ],
   },
 ];
@@ -65,11 +70,15 @@ for (var i = 0; i < questionList.length; i++) {
 }
 
 buttonTag.addEventListener("click", function buttonCorrect() {
-  for(z = 0; z < questionList.length; i++ ){
-  if (questionList.answer[z].correct === false){
-        
-  else }
-
+  for (z = 0; z < questionList.length; i++) {
+    var q = questionList[z];
+    console.log(z.answer[z].correct);
+    if (z.answer[z].correct === false) {
+      alert("Correct! - next question");
+    } else if (z.answer[z].correct) {
+      alert("Incorrect! - 10 sec");
+      startTime = starTime - 10;
+    }
   }
 });
 //eventListener('click', )
@@ -91,6 +100,6 @@ buttonClick.addEventListener("click", function () {
 }); //sru n every second (1000=1sec)
 /////////////////////////Storing Run /////////////////////////////////////
 
-var storeScore = prompt("Please enter initals and current time!");
+// var storeScore = prompt("Please enter initals and current time!");
 
-localStorage.setItem("storeScore", JSON.stringify([storesScore]));
+// localStorage.setItem("storeScore", JSON.stringify([storesScore]));
