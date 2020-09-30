@@ -20,7 +20,14 @@ var questionList = [
       { text: "Mt. Mood", correct: false },
     ],
   },
-
+  {
+    question: "What is the capital of Iowa?",
+    answers: [
+      { text: "Davenport", correct: false },
+      { text: "Des Moines", correct: true },
+      { text: "Iowa City", correct: false },
+    ],
+  },
   {
     question: "What is the capital of Texas?",
     answers: [
@@ -39,12 +46,34 @@ var questionList = [
     ],
   },
 ];
-
+////need to add button for each answer option and rotate through questions after submission
+//incorrect = --20 seconds off timer
 for (var i = 0; i < questionList.length; i++) {
   var newTag = document.createElement("p");
-  newTag.textContent = questionList[i];
+  var q = questionList[i];
+  console.log(q);
+  newTag.textContent = q.question;
   questionDiv.appendChild(newTag);
+
+  for (var j = 0; j < q.answers.length; j++) {
+    // console.log(q.answers[j].text);
+    var buttonTag = document.createElement("button");
+    buttonTag.textContent = q.answers[j].text;
+    console.log(buttonTag);
+    questionDiv.appendChild(buttonTag);
+  }
 }
+
+buttonTag.addEventListener("click", function buttonCorrect() {
+  for(z = 0; z < questionList.length; i++ ){
+  if (questionList.answer[z].correct === false){
+        
+  else }
+
+  }
+});
+//eventListener('click', )
+//html dataset
 
 ////////////////////Countdown Timer////////////////////////////
 buttonClick.addEventListener("click", function () {
@@ -64,4 +93,4 @@ buttonClick.addEventListener("click", function () {
 
 var storeScore = prompt("Please enter initals and current time!");
 
-localStorage.setItem("storeScore", JSON.stringify([storescore]));
+localStorage.setItem("storeScore", JSON.stringify([storesScore]));

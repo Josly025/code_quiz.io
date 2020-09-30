@@ -27,3 +27,14 @@ header {
   position: relative;
   margin: 100px 365px;
 }
+
+.questions {
+  border: solid;
+  padding: 25px;
+  background-color: steelblue;
+  border-color: rgb(12, 44, 87);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
